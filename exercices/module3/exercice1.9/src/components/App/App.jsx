@@ -1,6 +1,6 @@
 import { Button } from 'components/Button/Button'
 import { Title } from 'components/Display/Title'
-import { Value } from 'components/Display/Value'
+import { Value } from 'components/Display/StatisticLine'
 import { Average } from 'components/Display/Average'
 import { Positive } from 'components/Display/Positive'
 import { useState } from 'react'
