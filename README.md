@@ -31,7 +31,7 @@ const App = () => {
 
 ### 1. useState
 
-``useState`` is as hook and it is used to manage the state of a component. It returns an array with two elements. 
+``useState`` is as hook and it is used to manage the state of a component. It returns an array with two elements.
 The first element ``state`` is the current state and the second element ``setState`` is a function that allows you to update the state. (You can create you own custom hooks)
 
 ```jsx
@@ -66,4 +66,43 @@ const Display = ({text, method}) => {
         </div>
     );
 };
+```
+
+## Module 3
+
+### 1. useState 2nd
+
+``useState`` can create more than one state. In this case, setClicks needs to be called with an object that has the same properties as the initial state.
+
+```jsx
+const [clicks, setClicks] = useState({
+    left: 0, right: 0
+});
+
+const newClicks = {
+    left: 3,
+    right: 2
+}
+
+setClicks(newClicks);
+```
+
+### Spread operator
+
+``Spread operator`` is used to copy the properties of an object or an array into another object or array. And you can change the properties that you want.
+
+```jsx
+const clicks1 = {
+    left: 1,
+    right: 2
+}
+
+console.log(clicks1) // {left: 1, right: 2}
+
+const clicks2 = {
+    ...clicks1,
+    right: 3
+}
+
+console.log(clicks2) // {left: 1, right: 3}
 ```
