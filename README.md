@@ -106,3 +106,26 @@ const clicks2 = {
 
 console.log(clicks2) // {left: 1, right: 3}
 ```
+
+### Snippets
+
+A ``Snippet`` is a small piece of reusable code. You can create your own snippets or use the ones that are already available in your code editor.
+
+On VScode
+
+MacOS -> Code -> Settings -> User Snippets -> JavaScript React
+
+Windows -> File -> Preferences -> User Snippets -> JavaScript React
+
+
+```json
+{
+    "Print to console": {
+        "prefix": "clog",
+        "body": [
+            "console.log('$1');",
+        ],
+        "description": "Log output to console"
+    }
+}
+```
