@@ -117,7 +117,6 @@ MacOS -> Code -> Settings -> User Snippets -> JavaScript React
 
 Windows -> File -> Preferences -> User Snippets -> JavaScript React
 
-
 ```json
 {
     "Print to console": {
@@ -129,3 +128,5 @@ Windows -> File -> Preferences -> User Snippets -> JavaScript React
     }
 }
 ```
+
+## Module 4
