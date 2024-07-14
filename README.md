@@ -130,3 +130,87 @@ Windows -> File -> Preferences -> User Snippets -> JavaScript React
 ```
 
 ## Module 4
+
+### 1. useEffect
+
+``useEffect`` is a hook that allows you to perform side effects in your components. It is called after the component has been rendered to the screen.
+
+```jsx
+useEffect(() => {
+    console.log('Hello World!');
+}, []);
+```
+
+### 2. Fetch data (axios & useEffect)
+
+``Axios`` is a promise-based HTTP client for the browser and node.js. It is used to make requests to a server and get data.
+
+```bash
+npm install axios
+```
+
+```jsx
+import axios from 'axios';
+import { useEffect } from 'react';
+
+const App = () => {
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(response => {
+                console.log(response.data);
+            });
+    }, []);
+
+    return (
+        <div>
+            <h1>Hello World!</h1>
+        </div>
+    );
+};
+```
+
+
+### 3. json-server
+
+``json-server`` is a tool that allows you to create a fake REST API. It is useful when you are developing your frontend and you don't have a backend yet.
+
+```bash
+npm install json-server
+```
+
+```bash
+npx json-server --watch db.json --port 3001
+```
+
+```json
+// db.json
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Hello World!",
+            "author": "John Doe"
+        }
+    ]
+}
+```
+
+```jsx
+import axios from 'axios';
+import { useEffect } from 'react';
+
+const App = () => {
+    useEffect(() => {
+        axios.get('http://localhost:3001/posts')
+            .then(response => {
+                console.log(response.data);
+            });
+    }, []);
+
+    return (
+        <div>
+            <h1>Hello World!</h1>
+        </div>
+    );
+};
+```
