@@ -26,9 +26,6 @@ export const Weather = ({ country }) => {
         fetchWeather();
     }, [country]);
 
-    console.log(weather);
-    
-
     if (loading) {
         return (
             <div>

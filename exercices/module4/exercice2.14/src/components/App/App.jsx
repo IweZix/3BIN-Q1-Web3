@@ -12,9 +12,7 @@ export const App = () => {
   const hook = () => {
     axios.get(BASE_URL)
       .then(resp => {
-        console.log('promise fulfilled')
         setCountries(resp.data)
-        console.log(resp.data);
       })
       .catch(error => {
         console.log('promise rejected', error)
