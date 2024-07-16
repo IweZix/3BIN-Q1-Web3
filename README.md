@@ -154,11 +154,14 @@ import axios from 'axios';
 import { useEffect } from 'react';
 
 const App = () => {
+
+    const fetchData = async () => {
+        const response = await axios.get('https://myapi.com');
+        console.log(response.data);
+    };
+
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(response => {
-                console.log(response.data);
-            });
+        fetchData()
     }, []);
 
     return (
@@ -168,7 +171,6 @@ const App = () => {
     );
 };
 ```
-
 
 ### 3. json-server
 
@@ -210,6 +212,27 @@ const App = () => {
     return (
         <div>
             <h1>Hello World!</h1>
+        </div>
+    );
+};
+```
+
+### 4. Environment variables (Vite.js)
+
+``Vite.js`` allows you to create environment variables that can be accessed in your code.
+
+```bash
+// .env
+VITE_MESSAGE="Hello World!"
+```
+
+```jsx
+export const App = () => {
+    const msg = import.meta.env.VITE_MESSAGE;
+
+    return (
+        <div>
+            <h1>{msg}}</h1>
         </div>
     );
 };
