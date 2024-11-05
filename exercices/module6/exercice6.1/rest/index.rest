@@ -1,0 +1,11 @@
+### Add a phonebook
+POST http://localhost:3000/api/phonebooks
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "number": "123456789"
+}
+
+### Get a phonebook
+GET http://localhost:3000/api/phonebooks/670ea8f798bc6beafb261647
