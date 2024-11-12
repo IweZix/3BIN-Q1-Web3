@@ -1,0 +1,26 @@
+### Add a phonebook
+POST http://localhost:3001/persons
+Content-Type: application/json
+
+{
+  "name": "John Doe2",
+  "number": "123456789"
+}
+
+### Get phonebook
+GET http://localhost:3001/persons
+
+### Get a phonebook
+GET http://localhost:3001/persons/670e6dd8e8debfe3e2537ef2
+
+### Delete a phonebook
+DELETE http://localhost:3001/persons/670e6dd8e8debfe3e2537ef2
+
+### Update a phonebook
+PUT http://localhost:3001/persons/67335e4eda136babc6032559
+Content-Type: application/json
+
+{
+  "name": "John Doe3",
+  "number": "123456789"
+}

@@ -1,0 +1,75 @@
+@hostname = localhost
+@port = 3001
+@host = http://{{hostname}}:{{port}}
+@personId = 3
+@missingPersonId = 5
+
+### Get All
+GET {{host}}/persons HTTP/1.1
+Accept: application/json
+
+### Get id
+GET {{host}}/persons/{{personId}} HTTP/1.1
+Accept: application/json
+
+### Get id (not found)
+GET {{host}}/persons/{{missingPersonId}} HTTP/1.1
+Accept: application/json
+
+### Create (success)
+POST {{host}}/persons HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "number": "12-34-567890123"
+}
+
+### Create (missing name)
+POST {{host}}/persons HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "",
+  "number": "12-34-567890123"
+}
+
+### Create (missing number)
+POST {{host}}/persons HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "number": ""
+}
+
+### Create (dup name)
+POST {{host}}/persons HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Arto Hellas",
+  "number": "99-99-9999"
+}
+
+### Update existing
+PUT {{host}}/persons/{{personId}} HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Dan Abramov2",
+  "number": "999-888777"
+}
+
+### Delete existing
+DELETE {{host}}/persons/{{personId}} HTTP/1.1
+Accept: application/json
+
+### Delete not found
+DELETE {{host}}/persons/{{missingPersonId}} HTTP/1.1
+Accept: application/json
