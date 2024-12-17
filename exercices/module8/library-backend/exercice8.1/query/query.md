@@ -1,0 +1,6 @@
+# Query
+
+query {
+  booksCount
+  authorCount
+}
