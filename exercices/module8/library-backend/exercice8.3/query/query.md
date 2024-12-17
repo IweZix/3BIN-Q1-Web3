@@ -2,11 +2,9 @@
 
 ```grahpql
 query {
-  allBooks { 
-    title 
-    author
-    published 
-    genres
+  allAuthors {
+    name
+    bookCount
   }
 }
 ```
