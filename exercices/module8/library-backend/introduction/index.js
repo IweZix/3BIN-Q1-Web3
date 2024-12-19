@@ -77,7 +77,7 @@ const resolvers = {
             return persons.filter(byPhone);
         },
         findPerson: (root, args) => {
-            persons.find(p => p.name === args.name);
+            return persons.find(p => p.name === args.name);
         }
     },
     Person: {
