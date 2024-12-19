@@ -1,0 +1,49 @@
+@baseUrl=http://localhost:3001
+
+### Get All
+GET {{baseUrl}}/books HTTP/1.1
+
+### Add a valid comment
+POST {{baseUrl}}/books/6461f476d9a9da9dbeade34e HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "validUser",
+    "comment": "This book is fascinating and very well written."
+}
+
+### Add an invalid comment (5 characters)
+POST {{baseUrl}}/books/6461f476d9a9da9dbeade34e HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "validUser",
+    "comment": "Short"
+}
+
+### Add a comment with an invalid username (3 characters)
+POST {{baseUrl}}/books/6461f476d9a9da9dbeade34e HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "usr",
+    "comment": "This book is fascinating and very well written."
+}
+
+### Add a comment to a non-existent book
+POST {{baseUrl}}/books/60d21b4667d0d8992e610c99 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "validUser",
+    "comment": "This book is fascinating and very well written."
+}
+
+### Add a duplicate comment from the same user
+POST {{baseUrl}}/books/6461f476d9a9da9dbeade34e HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "validUser",
+    "comment": "This book is fascinating and very well written."
+}
