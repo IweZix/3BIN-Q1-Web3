@@ -1,0 +1,58 @@
+@baseUrl=http://localhost:3001
+
+# 2.2
+
+### 1.	d’ajouter un commentaire correct pour une blague ;
+POST {{baseUrl}}/jokes/6461f476d9a9da9dbeade34e
+Content-Type: application/json
+
+{
+    "username": "validUser4",
+    "comment": "This joke is funny"
+}
+
+### 2.	de tenter d’ajouter un commentaire non valide de 5 charactères ;
+POST {{baseUrl}}/jokes/6461f476d9a9da9dbeade34e
+Content-Type: application/json
+
+{
+    "username": "validUser2",
+    "comment": "N/A"
+}
+
+
+### 3.	de tenter d’ajouter un commentaire pour un username invalide de 3 charactère ;
+POST {{baseUrl}}/jokes/6461f476d9a9da9dbeade34e
+Content-Type: application/json
+
+{
+    "username": "N/A",
+    "comment": "This joke is funny"
+}
+
+
+### 4.	de tenter d’ajouter un commentaire pour une blague qui n’existe pas,
+
+POST {{baseUrl}}/jokes/6461f476d9a9da9dbeade34f
+Content-Type: application/json
+
+{
+    "username": "validUser3",
+    "comment": "This joke is funny"
+}
+
+
+### 5.	de tenter d’ajouter un commentaire pour une blague déjà commentée par ce username.
+POST {{baseUrl}}/jokes/6461f476d9a9da9dbeade34e
+Content-Type: application/json
+
+{
+    "username": "validUser",
+    "comment": "already commented"
+}
+
+
+# 2.3
+
+### 1.	de récupérer toutes les blagues
+GET {{baseUrl}}/jokes
