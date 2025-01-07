@@ -25,7 +25,7 @@ export const Jokes = () => {
                     {jokes.map((joke) => (
                         <tr key={joke.id}>
                             <td>{joke.name}</td>
-                            <td>{joke.jokes}</td>
+                            <td>{joke.joke}</td>
                             <td>
                                 <input 
                                         type="text" 
